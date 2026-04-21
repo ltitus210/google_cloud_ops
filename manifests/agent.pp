@@ -33,7 +33,7 @@ define google_cloud_ops::agent (
 
   # windows globals
   if $facts['os']['family'] == 'windows' {
-    $system_root = $facts['system32']
+    $system_root = $facts['os']['windows']['system32']
     $googet = 'C:\\ProgramData\\GooGet\\googet.exe'
     if $agent_type == 'ops-agent' {
       $service_name = 'google-cloud-ops-agent'
